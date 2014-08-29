@@ -8,12 +8,10 @@ import urllib2
 import httplib
 import time
 import uuid
-import nexmo
 import datetime, random, string
 import hashlib
 import hmac
 import base64
-
 import base64
 # from functions import *
 from google.appengine.api import urlfetch
