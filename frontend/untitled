@@ -1,0 +1,40 @@
+var Events = {
+
+    Action: {
+        init: function()
+        {
+            console.log("Events.Action.init()");
+            this.checkTask();
+            this.dropDownField();
+        },
+
+        checkTask: function(){
+            $(".tasks-check").change(function(){
+                console.log($(this).is(":checked"))
+                if($(this).is(":checked"))
+                {
+                    task_id = $(this).attr("id").replace("task-check-", "");
+                    console.log(task_id)
+                    $("#tasks-" + task_id).addClass("tasks-done");
+                    /*$.ajax({
+                        url: "/done/" + task_id,
+                        type: "post",
+                        data: {action: "done_task"},
+                        success: function(data){
+                            console.log(data);
+                        },
+                        error:function(){
+                            alert("failure");
+
+                        },
+                        dataType: "json"
+
+                    });*/
+                }
+            });
+        },
+    }
+};
+
+
+

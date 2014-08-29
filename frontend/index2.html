@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    <title>Deppo</title>
+
+    <!-- Default css -->
+    <link rel="stylesheet" type="text/css" href="/css/frontpage_style.css" />
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- fontawesome core CSS -->
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <!-- animate.css -->
+    <link rel="stylesheet" type="text/css" href="/css/animate.css" />     
+    
+  </head>
+
+  <body>    
+    
+    <div class="pageContainer">      
+      <header id="frontpage-header">
+        <div class="frontpage-header-inner">
+          <nav class="navbar" role="navigation">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                  <i class="fa fa-dropbox"></i>
+                  deppo
+                </a>
+              </div><!-- navbar-header -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#intro" data-scroll>Home</a></li>
+                  <li><a href="#howitworks" data-scroll>How it works</a></li>
+                  <li><a href="#location" data-scroll>Locations</a></li>
+                  <li><a href="#">FAQ</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#" class="btn btn-primary register-trigger">Sign-Up</a></li>
+                  <li><a href="#" id="login_form" class="btn btn-default modal-trigger" data-modal="loginModal">Login</a></li>
+                </ul>
+              </div><!-- navbar-collapse -->
+            </div><!-- container-fluid -->
+          </nav><!-- navbar -->
+        </div><!-- frontpage-header-inner -->
+      </header>
+      <div class="section-container" id="intro">
+        <div class="img-container"></div><!-- img-container -->
+        <ul class="signup-login">
+          <li><a href="#" class="btn btn-primary register-trigger">Sign-Up</a></li>
+          <li><a href="#" class="btn btn-default modal-trigger" data-modal="loginModal">Login</a></li>
+        </ul>
+        <div class="intro-inner">
+          <div class="row">
+            <div class="intro-content col-lg-8 col-md-7">
+              <a href="#" class="logo hide"><i class="fa fa-dropbox"></i>deppo</a>
+              <h1 class="hide">No more missed delivery again</h1>
+              <ul class="btn-wrapper hide">
+                <li><a href="#" class="hide btn btn-primary btn-lg register-trigger">Get Started</a></li>
+                <li><a href="#" class="hide btn btn-default btn-lg">Learn More</a></li>
+              </ul>
+            </div><!-- col -->
+            <div class="col-lg-4 col-md-5">
+              <div class="registrationForm {% if current_page != "REGISTER" %}hide{% endif %}">
+                <form action="/register" method="post" id="front_registration_form">
+                  <h2 class="hide">Let's get you started.</h2>
+                  <h5 class="hide">Please complete the form below and hit "Let's Go!" button when done.</h5>
+                  <input type="text" name="firstname" placeholder="First Name" class="fname hide"/>
+                  <input type="text" name="lastname" placeholder="Last Name" class="lname hide"/>
+                  <input type="email" name="emailaddress" placeholder="Email Address" class="emailaddress hide"/>
+                  <input type="text" name="phonenumber" placeholder="Contact Number" class="contactnum hide" value="+63"/>
+                  <input type="password" name="password" placeholder="Password" class="password hide"/>
+                  <input type="password" name="confirm_password" placeholder="Confirm Password" class="confirmpass hide"/>
+
+
+                {% if register_error %}
+                    <p style="color:#d44950"><strong>{{ register_error }}</strong></p>
+                {% endif %}
+
+                  <p class="terms-of-use hide">By creating a deppo account you agree to our <a href="#">Terms of Use.</a></p>
+                  <input type="submit" name="" value="Let's Go!" class="btn btn-lg btn-primary btn-block hide" />
+                </form>
+              </div><!-- registrationForm -->
+            </div><!-- col -->
+            <div class="clear"></div><!-- clear -->
+          </div><!-- row -->
+        </div><!-- intro-inner -->
+      </div><!-- intro -->
+      <div class="section-container" id="howitworks">
+        <div class="howitworks-inner">
+          <h2 class="hide">Wonder how it works?</h2>
+          <h3 class="hide">Ship parcels to a Deppo for quick, convenient and secure pick-up anytime.</h3>
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="box boxWrapper1 hide">
+                <div class="imgContainer">
+                  <img src="/img/img-shop.png" alt="" />
+                </div><!-- imgContainer -->
+                <h4>Shop anywhere online</h4>
+                <p>Enter your BufferBox Address upon checkout whenever you buy online.</p>
+              </div><!-- boxWrapper -->
+            </div><!-- col -->
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="box boxWrapper2 hide">
+                <div class="imgContainer">
+                  <img src="/img/img-ship.png" alt="" />
+                </div><!-- imgContainer -->
+                <h4>Ship to the nearest Deppo Box</h4>
+                <p>Sign in using your Google account to get your personal BufferBox Address.</p>
+              </div><!-- boxWrapper -->
+            </div><!-- col -->
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="box boxWrapper3 hide">
+                <div class="imgContainer">
+                  <img src="/img/img-collect.png" alt="" />
+                </div><!-- imgContainer -->
+                <h4>Pick up at your convenience</h4>
+                <p>You'll receive an unlock code by email. Pick up your parcel any time you like.</p>
+              </div><!-- boxWrapper -->
+            </div><!-- col -->
+            <div class="clear"></div><!-- clear -->
+          </div><!-- row -->
+        </div><!-- howitworks-inner -->
+      </div><!-- howitworks -->
+      <div class="section-container" id="location">
+        <div class="location-inner">
+          <h2 class="hide">See the nearest Deppo in your location.</h2>
+          <h3 class="hide">Ship parcels to a Deppo for quick, convenient and secure pick-up anytime.</h3>
+          <div class="row">            
+            <div class="col-lg-3 col-md-3">
+              
+              <ul class="locationlist hide">                
+                {% for locker in lockers %}                 
+                <li><a href="javascript:google.maps.event.trigger(gmarkers[{{ loop.index - 1 }}],'click');"><span class="location" data-location="{{ locker.key.id }}"><i class="fa fa-map-marker"></i>{{ locker.location }}</span></a></li>                
+                {% endfor %}
+              </ul> 
+              
+            </div><!-- col -->            
+            <div class="col-lg-9 col-md-9">              
+                <div id="map-canvas" style="height:450px; width:100%; color: black"></div>
+            </div><!-- col -->            
+            <div class="clear"></div><!-- clear -->
+          </div><!-- row -->
+        </div><!-- location-inner -->
+        <div class="backdrop"></div><!-- backdrop -->
+      </div><!-- section-container -->
+    </div><!-- pageContainer -->
+    <footer class="section-container" id="frontpage-footer">
+      <div class="frontpage-footer-inner">
+        <a href="#" class="btn btn-primary btn-lg">Let's Get Started!</a>
+        <div class="copyright">
+          <p>Copyright (C) 2014 Deppo. All Rights Reserved.</p>
+          <ul class="socialMedia">
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          </ul>
+        </div><!-- copyright -->
+      </div><!-- frontpage-footer-inner -->
+    </footer>
+
+    <div class="modal-deppo" id="loginModal">
+      <span class="modal-close"><i class="fa fa-times"></i></span>
+      <div class="modal-dd-header">
+        Please login to you account.
+      </div><!-- modal-dd-header -->
+      <div class="modal-dd-body">
+        <form action="/login" method="post">
+            <div class="loginForm">
+              <input type="text" name="email" value="" placeholder="Email Address" />
+              <input type="password" name="password" value="" placeholder="Password" />
+              <input type="submit" name="" value="Login" class="btn btn-primary btn-block"/>
+              {% if error %}
+                <label class="pull-left" style="color:#d44950"><strong>{{ error }}</strong></label>
+                <br />
+                <hr />
+              {% endif %}
+              <input type="checkbox" name="" value="remember" class="pull-left" />
+              <label class="pull-left">Keep me logged in.</label>
+              <div class="clear"></div><!-- clear -->
+            </div><!-- loginForm -->
+        </form><!-- loginForm -->
+      </div><!-- modal-dd-body -->
+      <div class="modal-dd-footer">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 align-center">
+            <p>Forgot your password? <a href="#">Recover</a>.</p>
+          </div><!-- col -->
+          <div class="col-lg-6 col-md-6 col-sm-6 align-center">
+            <p>Don't have an account? <a href="/register" id="login-link-reg">Register</a>.</p>
+          </div><!-- col -->
+          <div class="clear"></div><!-- clear -->
+        </div><!-- row -->
+      </div><!-- modal-dd-footer -->
+    </div><!-- modal -->
+    <div class="modal-deppobackdrop"></div><!-- backdrop -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="/js/jquery.min.1.11.0.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- page transition core JavaScript -->
+    <script src="/js/modernizr.js"></script>
+    <!-- custom script -->
+    <script src="/js/main2.js"></script>
+    <script src="/js/smooth-scroll.js"></script>
+    <!-- Google Maps Script -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    
+    {% block jsbottom %}
+    <script>
+      // Google Map Script
+
+      var gmarkers = [];
+      var locations = [];
+
+      
+      function initialize() {
+
+        var mapOptions = {
+          zoom: 13,
+            center: new google.maps.LatLng(10.329446, 123.908084),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+        
+        var i = 0;
+        var locations = [
+        {% for locker in lockers %}
+          ['{{ locker.location }}', '{{ locker.longtitude }}', '{{ locker.latitude }}', ++i],
+          // ['SM Cebu City', 10.312212, 123.918311, 2],
+          // ['IT Park Cebu City', 10.330414, 123.906845, 3]  
+        {% endfor %}
+        ];        
+
+        var marker, i;
+          var infowindow = new google.maps.InfoWindow();
+
+          google.maps.event.addListener(map, 'click', function() {
+              infowindow.close();
+          });
+
+          
+          for (i = 0; i < locations.length; i++) {
+            marker = new google.maps.Marker({
+              position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+              map: map        
+            });
+
+            gmarkers.push(marker);
+
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+              return function() {
+                infowindow.setContent(locations[i][0]);
+                infowindow.open(map, marker);
+              }
+            })(marker, i));
+          }
+
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+      // SmoothScroll Script
+      smoothScroll.init({
+        speed: 500,
+        easing: 'easeInOutCubic',
+        updateURL: false,
+        callbackBefore: function ( toggle, anchor ) {},
+        callbackAfter: function ( toggle, anchor ) {}
+      });
+      {% if error or current_page == "LOGIN" %}
+            $("#loginModal").modal("show");
+            $(".modal-close").click(function(event){
+                window.location = "/";
+            });
+
+      {% endif %}
+
+      {% if current_page == "REGISTER" %}
+            auto_show_signup();
+      {% endif %}
+
+      $(".location").onload(function(e){
+        e.preventDefault();
+        this_id = $(this).attr("id");            
+        console.log(this_id + "hello world")
+        cancel_transaction("transaction_id=" + this_id)
+      })
+
+    </script>
+    {% endblock %}
+  </body>
+</html>
